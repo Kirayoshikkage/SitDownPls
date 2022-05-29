@@ -1,0 +1,132 @@
+.burger-menu {
+  position: absolute;
+  top: rem(108);
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  border-top: rem(1) solid rgba(0, 0, 0, 0.2);
+  z-index: 100;
+
+  &_active {
+    .burger-menu__content {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  &__body {
+    background-color: white;
+    width: 100%;
+    max-height: rem(300);
+    padding: rem(92) 0 rem(64);
+  }
+
+  &__content {
+    height: 100%;
+    transition-property: transform, opacity;
+    transition-duration: $transitionDuration;
+    opacity: 0;
+    transform: translateY(-15%);
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  &__nav-menu {
+    transform: translateX(rem(-5));
+    max-width: rem(308);
+    height: rem(150);
+    overflow-x: auto;
+  }
+
+  &__item:first-child {
+    .container {
+      background: url("../img/burger_bg.svg") no-repeat bottom right rem(16);
+    }
+  }
+
+  &__item:last-child {
+    display: none;
+  }
+}
+
+@include small-tablet {
+  .burger-menu {
+    top: rem(144);
+    background-color: white;
+
+    &__body {
+      max-height: 100%;
+      height: calc(100% - rem(144));
+      padding: rem(62) 0 0 0;
+    }
+
+    &__content {
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &__item:first-child {
+      .container {
+        background: none;
+      }
+      margin-bottom: rem(26);
+    }
+
+    &__item:last-child {
+      display: block;
+      background-color: var(--color-greyLight);
+      padding: rem(24) 0;
+    }
+
+    &__nav-menu {
+      transform: translateX(0);
+      max-width: 100%;
+      height: rem(340);
+    }
+
+    .nav-menu__list {
+      &_grid_row {
+        grid-template-columns: 1fr;
+        gap: rem(42) 0;
+      }
+    }
+
+    &__categories {
+      height: rem(70);
+      overflow-x: auto;
+      .categories__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-between;
+        row-gap: rem(12);
+      }
+    }
+  }
+}
+
+@media (max-width: 767.98px) and (orientation: landscape) {
+  .burger-menu {
+    &__nav-menu {
+      height: rem(73);
+    }
+
+    .nav-menu__list {
+      grid-template-columns: repeat(5, 1fr);
+      grid-auto-flow: row;
+      gap: 0.5rem;
+    }
+
+    &__categories {
+      height: rem(40);
+      .categories__list {
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-flow: row;
+        gap: 0.5rem;
+      }
+    }
+  }
+}

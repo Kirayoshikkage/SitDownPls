@@ -1,0 +1,74 @@
+.slide-buttons {
+  position: relative;
+  display: flex;
+
+  .slide-buttons__prev,
+  .slide-buttons__next {
+    outline: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: rem(32);
+    height: rem(32);
+    margin: 0;
+
+    &::after {
+      display: none;
+    }
+
+    &:not(.swiper-button-disabled) {
+      .slide-arrow {
+        stroke: var(--color-primary);
+      }
+    }
+  }
+
+  .slide-buttons__prev {
+    margin-right: rem(13);
+  }
+}
+
+@include mouse-device {
+  .slide-buttons__prev,
+  .slide-buttons__next {
+    &:hover {
+      .slide-arrow__circle {
+        stroke: var(--color-primary);
+        fill: var(--color-primary);
+      }
+
+      .slide-arrow__arrow {
+        stroke: white;
+      }
+    }
+
+    &:focus {
+      .slide-arrow__circle {
+        stroke: var(--color-primary);
+        fill: var(--color-primaryLight);
+      }
+
+      .slide-arrow__arrow {
+        stroke: white;
+      }
+    }
+  }
+}
+
+@include touch-device {
+  .slide-buttons__prev,
+  .slide-buttons__next {
+    &:active {
+      .slide-arrow__circle {
+        stroke: var(--color-primaryShade);
+        fill: var(--color-primaryShade);
+      }
+
+      .slide-arrow__arrow {
+        stroke: white;
+      }
+    }
+  }
+}

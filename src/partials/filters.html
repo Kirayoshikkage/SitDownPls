@@ -1,0 +1,353 @@
+<section class="filters">
+  <h3 class="filters__subtitle filters__subtitle_desctop">Фильтровать по:</h3>
+  <h3 class="filters__subtitle filters__subtitle_laptop">Фильтры:</h3>
+  <div class="filters__grid">
+    <div class="filters__item">
+      <form action="#" class="filters__filter filters__filter_category">
+        <h3 class="filters__filter-subtitle">Категория</h3>
+        <div class="select filters__select select-filter-category">
+          <button type="button" class="btn-reset select__trigger">
+            <span class="select__current-item"> Категория </span>
+            <svg class="select__icon">
+              <use xlink:href="img/sprite.svg#select_icon"></use>
+            </svg>
+          </button>
+          <div class="select__body">
+            <div class="select__content">
+              <label class="custom-checkbox select__item" tabindex="0">
+                <input
+                  name="sofas"
+                  type="checkbox"
+                  class="custom-checkbox__field"
+                />
+                <span class="custom-checkbox__content">Диваны</span>
+              </label>
+              <label class="custom-checkbox select__item" tabindex="0">
+                <input
+                  name="armchairs"
+                  type="checkbox"
+                  class="custom-checkbox__field"
+                />
+                <span class="custom-checkbox__content">Кресла</span>
+              </label>
+              <label class="custom-checkbox select__item" tabindex="0">
+                <input
+                  name="puffs"
+                  type="checkbox"
+                  class="custom-checkbox__field"
+                />
+                <span class="custom-checkbox__content">Пуфы</span>
+              </label>
+              <label class="custom-checkbox select__item" tabindex="0">
+                <input
+                  name="beds"
+                  type="checkbox"
+                  class="custom-checkbox__field"
+                />
+                <span class="custom-checkbox__content">Кровати</span>
+              </label>
+              <label class="custom-checkbox select__item" tabindex="0">
+                <input
+                  name="cabinets"
+                  type="checkbox"
+                  class="custom-checkbox__field"
+                />
+                <span class="custom-checkbox__content">Тумбы</span>
+              </label>
+              <label class="custom-checkbox select__item" tabindex="0">
+                <input
+                  name="dressers"
+                  type="checkbox"
+                  class="custom-checkbox__field"
+                />
+                <span class="custom-checkbox__content">Комоды</span>
+              </label>
+              <label class="custom-checkbox select__item" tabindex="0">
+                <input
+                  name="chairs"
+                  type="checkbox"
+                  class="custom-checkbox__field"
+                />
+                <span class="custom-checkbox__content">Стулья</span>
+              </label>
+              <label class="custom-checkbox select__item" tabindex="0">
+                <input
+                  name="tables"
+                  type="checkbox"
+                  class="custom-checkbox__field"
+                />
+                <span class="custom-checkbox__content">Столы</span>
+              </label>
+              <label class="custom-checkbox select__item" tabindex="0">
+                <input
+                  name="accessories"
+                  type="checkbox"
+                  class="custom-checkbox__field"
+                />
+                <span class="custom-checkbox__content">Аксессуары</span>
+              </label>
+            </div>
+            <button type="button" class="btn-reset select__more-btn">
+              + ещё <span class="select__more-btn-amount"></span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="filters__item filters__item_mgb_10">
+      <h3 class="filters__filter-subtitle filters__filter-subtitle_mgb_4">
+        Цена
+      </h3>
+      <div class="select filters__select select-filter-price">
+        <button type="button" class="btn-reset select__trigger">
+          <span class="select__current-item"> Цена </span>
+          <svg class="select__icon">
+            <use xlink:href="img/sprite.svg#select_icon"></use>
+          </svg>
+        </button>
+        <div class="select__body">
+          <div class="select__content">
+            <div class="range range_price">
+              <div class="range__inputs">
+                <div class="range__container">
+                  <p class="range__text">от</p>
+                  <input
+                    data-test="range-min-input"
+                    data-mutator="input_from"
+                    data-storage="from"
+                    data-type="input"
+                    class="input-reset range__mutator range__input"
+                    type="number"
+                    step="100"
+                    min="0"
+                    value="2000"
+                  />
+                </div>
+                <div class="range__container">
+                  <p class="range__text">до</p>
+                  <input
+                    data-test="range-max-input"
+                    data-mutator="input_before"
+                    data-storage="before"
+                    data-type="input"
+                    class="input-reset range__mutator range__input"
+                    type="number"
+                    step="100"
+                    value="150000"
+                    max="250000"
+                  />
+                </div>
+              </div>
+              <div
+                role="progressbar"
+                aria-label="Прогрессбар для цены"
+                class="range__line"
+              >
+                <button
+                  data-test="range-min-slider"
+                  type="button"
+                  aria-label="Ползунок начальной цены"
+                  data-mutator="slider_from"
+                  data-storage="from"
+                  data-type="slider"
+                  class="btn-reset range__mutator range__slider"
+                >
+                  <svg
+                    width="13"
+                    height="13"
+                    viewBox="0 0 13 13"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.0197 13C0.25466 13 -0.23717 12.1878 0.117236 11.5096L5.84671 0.546693C6.23552 -0.197262 7.30668 -0.177781 7.66819 0.579819L12.8994 11.5428C13.222 12.2187 12.7293 13 11.9804 13L1.0197 13Z"
+                    />
+                  </svg>
+                </button>
+                <button
+                  data-test="range-max-slider"
+                  type="button"
+                  aria-label="Ползунок конеченой цены"
+                  data-mutator="slider_before"
+                  data-storage="before"
+                  data-type="slider"
+                  class="btn-reset range__mutator range__slider"
+                >
+                  <svg
+                    width="13"
+                    height="13"
+                    viewBox="0 0 13 13"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.0197 13C0.25466 13 -0.23717 12.1878 0.117236 11.5096L5.84671 0.546693C6.23552 -0.197262 7.30668 -0.177781 7.66819 0.579819L12.8994 11.5428C13.222 12.2187 12.7293 13 11.9804 13L1.0197 13Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn-reset select__more-btn">
+            + ещё<span class="select__more-btn-amount"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="filters__item">
+      <form action="#" class="filters__filter filters__filter_discount">
+        <h3 class="filters__filter-subtitle">Скидка</h3>
+        <div class="select filters__select select-filter-discount">
+          <button type="button" class="btn-reset select__trigger">
+            <span class="select__current-item"> Скидка </span>
+            <svg class="select__icon">
+              <use xlink:href="img/sprite.svg#select_icon"></use>
+            </svg>
+          </button>
+          <div class="select__body">
+            <div class="select__content">
+              <label class="custom-checkbox select__item" tabindex="0">
+                <input
+                  name="after"
+                  type="checkbox"
+                  class="custom-checkbox__field"
+                />
+                <span class="custom-checkbox__content"
+                  ><span class="custom-checkbox__mobile-hidden">Более</span>
+                  <span
+                    class="custom-checkbox__mobile-visible custom-checkbox__desctop-hidden"
+                    >&gt;</span
+                  >
+                  5000</span
+                >
+              </label>
+              <label class="custom-checkbox select__item" tabindex="0">
+                <input
+                  name="before"
+                  type="checkbox"
+                  class="custom-checkbox__field"
+                />
+                <span class="custom-checkbox__content">
+                  <span class="custom-checkbox__mobile-hidden">Менее</span>
+                  <span
+                    class="custom-checkbox__mobile-visible custom-checkbox__desctop-hidden"
+                    >&lt;</span
+                  >
+                  5000</span
+                >
+              </label>
+              <label class="custom-checkbox select__item" tabindex="0">
+                <input
+                  name="no"
+                  type="checkbox"
+                  class="custom-checkbox__field"
+                />
+                <span class="custom-checkbox__content">Не важно</span>
+              </label>
+            </div>
+            <button type="button" class="btn-reset select__more-btn">
+              + ещё <span class="select__more-btn-amount"></span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="filters__item">
+      <form action="#" class="filters__filter filters__filter_color">
+        <h3 class="filters__filter-subtitle">Цвет</h3>
+        <div
+          data-test="select-color"
+          class="select filters__select select-filter-color"
+        >
+          <button type="button" class="btn-reset select__trigger">
+            <span class="select__current-item"> Цвет </span>
+            <svg class="select__icon">
+              <use xlink:href="img/sprite.svg#select_icon"></use>
+            </svg>
+          </button>
+          <div class="select__body">
+            <div class="select__content">
+              <label class="custom-checkbox select__item" tabindex="0">
+                <input
+                  name="brown"
+                  type="checkbox"
+                  class="custom-checkbox__field"
+                />
+                <span class="custom-checkbox__content">Коричневый</span>
+              </label>
+              <label class="custom-checkbox select__item" tabindex="0">
+                <input
+                  name="black"
+                  type="checkbox"
+                  class="custom-checkbox__field"
+                />
+                <span class="custom-checkbox__content">Черный</span>
+              </label>
+              <label class="custom-checkbox select__item" tabindex="0">
+                <input
+                  name="beige"
+                  type="checkbox"
+                  class="custom-checkbox__field"
+                />
+                <span class="custom-checkbox__content">Бежевый</span>
+              </label>
+              <label class="custom-checkbox select__item" tabindex="0">
+                <input
+                  name="grey"
+                  type="checkbox"
+                  class="custom-checkbox__field"
+                />
+                <span class="custom-checkbox__content">Серый</span>
+              </label>
+              <label class="custom-checkbox select__item" tabindex="0">
+                <input
+                  name="white"
+                  type="checkbox"
+                  class="custom-checkbox__field"
+                />
+                <span class="custom-checkbox__content">Белый</span>
+              </label>
+              <label class="custom-checkbox select__item" tabindex="0">
+                <input
+                  name="blue"
+                  type="checkbox"
+                  class="custom-checkbox__field"
+                />
+                <span class="custom-checkbox__content">Синий</span>
+              </label>
+              <label class="custom-checkbox select__item" tabindex="0">
+                <input
+                  name="orange"
+                  type="checkbox"
+                  class="custom-checkbox__field"
+                />
+                <span class="custom-checkbox__content">Оранжевый</span>
+              </label>
+              <label class="custom-checkbox select__item" tabindex="0">
+                <input
+                  name="yellow"
+                  type="checkbox"
+                  class="custom-checkbox__field"
+                />
+                <span class="custom-checkbox__content">Желтый</span>
+              </label>
+              <label class="custom-checkbox select__item" tabindex="0">
+                <input
+                  name="green"
+                  type="checkbox"
+                  class="custom-checkbox__field"
+                />
+                <span class="custom-checkbox__content">Зеленый</span>
+              </label>
+            </div>
+            <button
+              data-test="select-color-more"
+              type="button"
+              class="btn-reset select__more-btn"
+            >
+              + ещё <span class="select__more-btn-amount"></span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

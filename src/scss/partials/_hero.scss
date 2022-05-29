@@ -1,0 +1,220 @@
+.hero {
+  margin-bottom: rem(68);
+  &__slide {
+    padding: rem(80) 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    position: relative;
+    .container {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      height: 100%;
+      justify-content: center;
+    }
+
+    &_one {
+      @include image-set("../img/hero_slide_one_desctop");
+    }
+
+    &_two {
+      @include image-set("../img/hero_slide_two_desctop");
+    }
+
+    &_three {
+      @include image-set("../img/hero_slide_three_desctop");
+    }
+  }
+
+  &__title {
+    font-size: rem(48);
+    font-weight: 700;
+    line-height: lh(66, 48);
+    color: var(--color-grey);
+    margin: 0 0 rem(48);
+
+    &_max-width_low {
+      max-width: rem(496);
+    }
+
+    &_max-width_hight {
+      max-width: rem(587);
+    }
+
+    &_color_white {
+      color: white;
+    }
+  }
+
+  &__button {
+    padding: rem(19) rem(48);
+
+    &_desctop-hidden {
+      display: none;
+    }
+  }
+
+  .swiper-pagination {
+    bottom: rem(20);
+  }
+
+  .swiper-pagination-bullet {
+    width: rem(14);
+    height: rem(14);
+    background-color: var(--color-black);
+    opacity: 0.3;
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+
+  .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets
+    .swiper-pagination-bullet {
+    margin: 0;
+
+    &:not(:last-child) {
+      margin: 0 1rem 0 0;
+    }
+  }
+
+  &__circle-progress-bar-animation {
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-auto-flow: column;
+    gap: rem(10);
+    padding: rem(20) rem(34);
+    border-radius: rem(10) rem(10) 0 0;
+  }
+}
+
+@include laptop {
+  .container {
+    max-width: rem(981);
+  }
+
+  .hero {
+    &__slide {
+      &_one {
+        @include image-set("../img/hero_slide_one_laptop");
+      }
+
+      &_two {
+        @include image-set("../img/hero_slide_two_laptop");
+      }
+
+      &_three {
+        @include image-set("../img/hero_slide_three_laptop");
+      }
+    }
+  }
+}
+
+@include tablet {
+  .container {
+    max-width: rem(654);
+  }
+
+  .hero {
+    &__slide {
+      &_one {
+        @include image-set("../img/hero_slide_one_tablet");
+      }
+
+      &_two {
+        @include image-set("../img/hero_slide_two_tablet");
+      }
+
+      &_three {
+        @include image-set("../img/hero_slide_three_tablet");
+      }
+    }
+  }
+}
+
+@include small-tablet {
+  .hero {
+    &__title {
+      font-size: rem(38);
+    }
+  }
+}
+
+@include mobile {
+  .container {
+    max-width: 100%;
+    padding: 0 rem(12);
+  }
+
+  .hero {
+    &__slider {
+      margin-bottom: rem(32);
+    }
+
+    .swiper-pagination {
+      bottom: rem(7);
+    }
+
+    .swiper-pagination-bullet {
+      width: rem(6);
+      height: rem(6);
+    }
+
+    &__title {
+      font-size: rem(20);
+      margin: 0;
+      max-width: rem(204);
+    }
+
+    .container {
+      justify-content: flex-start;
+      padding: 0 rem(30);
+    }
+
+    &__button {
+      width: calc(100% - rem(24));
+      margin: 0 auto;
+
+      &_mobile-hidden {
+        display: none;
+      }
+
+      &_mobile-visible {
+        display: block;
+      }
+    }
+
+    &__slide {
+      padding: rem(30) 0;
+      min-height: rem(210);
+
+      &_one {
+        @include image-set("../img/hero_slide_one_mobile");
+      }
+
+      &_two {
+        @include image-set("../img/hero_slide_two_mobile");
+      }
+
+      &_three {
+        @include image-set("../img/hero_slide_three_mobile");
+      }
+    }
+
+    .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+    .swiper-pagination-horizontal.swiper-pagination-bullets
+      .swiper-pagination-bullet {
+      margin: 0;
+
+      &:not(:last-child) {
+        margin: 0 rem(8) 0 0;
+      }
+    }
+  }
+}

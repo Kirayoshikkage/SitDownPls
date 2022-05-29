@@ -1,0 +1,153 @@
+.user-form {
+  &_flex_column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    width: 100%;
+    position: relative;
+    &_mgb_30 {
+      margin: 0 0 rem(30);
+    }
+  }
+
+  &__input {
+    width: 100%;
+    color: var(--color-grey);
+    background-color: var(--color-greyLight);
+    padding: rem(15) rem(18);
+    border-radius: rem(10);
+    border: rem(1) solid transparent;
+    transition-property: background, border-color;
+    transition-duration: $transitionDuration;
+
+    &::placeholder {
+      color: var(--color-grey);
+    }
+  }
+
+  &__button {
+    align-self: flex-start;
+    padding: rem(15.5) rem(31.5);
+
+    &_mgb_12 {
+      margin: 0 0 rem(24);
+    }
+  }
+
+  &__checkbox {
+    .custom-checkbox__content {
+      padding-left: rem(22);
+      font-size: rem(14);
+      line-height: lh(14, 19);
+      color: #333;
+      transition: color $transitionDuration;
+      &::before {
+        width: rem(14);
+        height: rem(14);
+        border: rem(1) solid var(--color-grey);
+        border-radius: rem(2);
+        transform: translateY(rem(3));
+        transition-property: background, border-color;
+        transition-duration: $transitionDuration;
+      }
+
+      &::after {
+        background-image: url("../img/checkbox.svg");
+        background-size: rem(10) rem(8);
+        width: rem(14);
+        height: rem(14);
+        transform: translateY(rem(4));
+      }
+    }
+
+    .custom-checkbox__field:checked + .custom-checkbox__content::after {
+      opacity: 1;
+    }
+
+    .custom-checkbox__field:checked + .custom-checkbox__content::before {
+      outline: none;
+      background-color: var(--color-primary);
+    }
+
+    .custom-checkbox__field:disabled + .custom-checkbox__content {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+  }
+
+  &__link {
+    line-height: lh(17, 14);
+    color: var(--color-primary);
+    border-bottom: rem(1) solid var(--color-primary);
+    transition-property: color, border-color;
+    transition-duration: $transitionDuration;
+  }
+}
+
+@include mouse-device {
+  .user-form {
+    &__input {
+      &:hover {
+        background-color: #eaeaea;
+      }
+
+      &:focus {
+        border-color: var(--color-primary);
+        background-color: #f8efff;
+      }
+    }
+
+    &__link {
+      &:hover {
+        color: var(--color-primaryLight);
+      }
+
+      &:focus {
+        color: var(--color-primaryShade);
+        border-color: var(--color-primaryShade);
+      }
+    }
+
+    &__checkbox {
+      &:hover,
+      &:focus {
+        .custom-checkbox__content {
+          color: var(--color-primary);
+          &::before {
+            border: rem(1) solid var(--color-primary);
+          }
+        }
+      }
+    }
+  }
+}
+
+@include touch-device {
+  .user-form {
+    &__input {
+      &:active {
+        border-color: #b8ec64;
+      }
+    }
+
+    &__link {
+      &:active {
+        color: var(--color-primaryShade);
+        border-color: var(--color-primaryShade);
+      }
+    }
+
+    &__checkbox {
+      &:active {
+        .custom-checkbox__content {
+          color: var(--color-primary);
+          &::before {
+            border: rem(1) solid var(--color-primary);
+          }
+        }
+      }
+    }
+  }
+}

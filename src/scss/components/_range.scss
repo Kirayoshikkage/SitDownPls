@@ -1,0 +1,137 @@
+.range {
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__inputs {
+    width: 100%;
+    margin: 0 0 rem(10);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__text {
+    margin: 0 rem(10) 0 0;
+    color: var(--color-greyShade);
+    font-size: rem(16);
+    line-height: lh(21, 16);
+  }
+
+  &__line {
+    width: 100%;
+    height: rem(3);
+    background-color: #eaeaea;
+    position: relative;
+  }
+
+  &__slider {
+    position: absolute;
+    top: 0;
+    width: rem(13);
+    height: rem(13);
+    border-radius: rem(3);
+
+    svg {
+      fill: var(--color-primary);
+      transition-property: fill;
+      transition-duration: $transitionDuration;
+    }
+  }
+
+  &__input {
+    width: rem(86);
+    padding: rem(3.5) rem(13);
+    border: rem(1) solid var(--color-greyShade);
+    border-radius: rem(5);
+    color: var(--color-greyShade);
+    line-height: lh(21, 16);
+    transition-property: border-color, background-color;
+    transition-duration: $transitionDuration;
+  }
+
+  &__line-progress {
+    position: absolute;
+    height: rem(3);
+    transform: translateX(rem(7));
+    transition-property: background-color;
+    transition-duration: $transitionDuration;
+
+    &:nth-child(odd) {
+      background-color: var(--color-primary);
+    }
+
+    &:nth-child(even) {
+      background-color: var(--color-secondary);
+    }
+  }
+}
+
+@include mouse-device {
+  .range {
+    &__input {
+      &:hover {
+        border-color: var(--color-primary);
+      }
+
+      &:focus {
+        background-color: #ebd1ff;
+        border-color: var(--color-primary);
+      }
+    }
+
+    &__slider {
+      &:hover {
+        svg {
+          fill: var(--color-primaryLight);
+        }
+      }
+
+      &:focus {
+        svg {
+          fill: var(--color-primaryShade);
+        }
+      }
+    }
+
+    &__slider:focus ~ .range__line-progress_from {
+      background-color: var(--color-primaryShade);
+    }
+  }
+}
+
+@include touch-device {
+  .range {
+    &__input {
+      &:active {
+        border-color: var(--color-primaryShade);
+      }
+    }
+
+    &__slider {
+      &:active {
+        svg {
+          fill: var(--color-primaryShade);
+        }
+      }
+    }
+
+    &__slider:active ~ .range__line-progress_from {
+      background-color: var(--color-primaryShade);
+    }
+  }
+}

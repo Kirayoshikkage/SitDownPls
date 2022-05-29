@@ -1,0 +1,341 @@
+.product-description {
+  margin-bottom: rem(81);
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, rem(624)));
+    column-gap: rem(32);
+    grid-template-areas:
+      "slider desc"
+      "thumbs desc"
+      "mechanism characteristics";
+  }
+
+  &__item {
+    &_slider {
+      grid-area: slider;
+      margin-bottom: rem(11);
+
+      .swiper-slide {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    &_thumbs {
+      grid-area: thumbs;
+      margin-bottom: rem(32);
+      background-color: var(--color-greyLight);
+      padding: rem(8.5) rem(25);
+
+      .swiper-slide {
+        width: auto;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+      }
+    }
+
+    &_desc {
+      padding-top: rem(12);
+      grid-area: desc;
+    }
+
+    &_mechanism {
+      grid-area: mechanism;
+      padding-bottom: rem(218);
+      @include image-set("../img/d31_bg_desctop");
+      background-repeat: no-repeat;
+      background-position: bottom left;
+      background-size: rem(526) rem(113);
+    }
+
+    &_characteristics {
+      grid-area: characteristics;
+    }
+  }
+
+  &__img {
+    max-height: rem(245);
+  }
+
+  &__img-thumb {
+    max-height: rem(61);
+  }
+
+  &__rating-star {
+    display: block;
+    position: relative;
+    margin-bottom: rem(2);
+  }
+
+  &__lead {
+    font-size: rem(24);
+    font-weight: 400;
+    line-height: lh(31, 24);
+    color: var(--color-black);
+    margin: 0 0 rem(5);
+  }
+
+  &__desc {
+    font-size: rem(14);
+    color: var(--color-grey);
+    margin: 0 0 rem(19);
+  }
+
+  &__price {
+    font-size: rem(36);
+    line-height: lh(47, 36);
+    margin: 0 0 rem(21);
+  }
+
+  &__button {
+    padding: rem(16) rem(29.5);
+    display: block;
+  }
+
+  &__add-basket {
+    font-size: rem(16);
+    line-height: lh(21, 16);
+    color: var(--color-primary);
+    padding: rem(13) rem(29.5);
+    transition-property: color;
+    transition-duration: $transitionDuration;
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    color: var(--color-black);
+    margin: 0 0 rem(6);
+    font-size: 1rem;
+  }
+
+  &__text {
+    font-size: rem(14);
+    line-height: lh(25, 14);
+    color: var(--color-black);
+    margin: 0;
+
+    &_mgb_16 {
+      margin: 0 0 rem(8);
+    }
+  }
+}
+
+@include laptop {
+  .product-description {
+    margin-bottom: rem(70);
+
+    &__grid {
+      grid-template-columns: minmax(0, rem(514)) minmax(0, rem(405));
+    }
+
+    &__item {
+      &_mechanism {
+        padding-bottom: rem(141);
+        background-size: rem(514) rem(110);
+      }
+    }
+
+    .product-characteristics {
+      $width: 187.5;
+
+      &__name {
+        width: rem($width);
+      }
+
+      &__text {
+        &::before {
+          right: calc(100% - rem($width) + rem(4));
+          width: calc(rem($width) - 100% - rem(8));
+        }
+      }
+    }
+
+    &__img {
+      max-height: rem(202);
+    }
+  }
+}
+
+@include tablet {
+  .product-description {
+    margin-bottom: rem(32);
+
+    &__grid {
+      grid-template-columns: minmax(0, rem(187)) minmax(0, rem(399));
+      grid-template-areas:
+        "slider slider"
+        "thumbs desc"
+        "mechanism mechanism"
+        "characteristics characteristics";
+      gap: rem(33);
+    }
+
+    &__item {
+      &_thumbs {
+        padding: rem(25);
+        margin: rem(-5) 0 0;
+        .swiper {
+          height: rem(299);
+        }
+
+        .swiper-slide {
+          height: rem(61);
+        }
+      }
+
+      &_slider {
+        margin: 0;
+      }
+
+      &_desc {
+        padding-top: rem(45);
+      }
+
+      &_mechanism {
+        max-width: rem(515);
+      }
+    }
+
+    &__img {
+      max-height: rem(245);
+    }
+
+    .product-characteristics {
+      $width: 400;
+
+      &__name {
+        width: rem($width);
+      }
+
+      &__text {
+        &::before {
+          right: calc(100% - rem($width) + rem(4));
+          width: calc(rem($width) - 100% - rem(8));
+        }
+      }
+    }
+  }
+}
+
+@include small-tablet {
+  .product-description {
+    margin-bottom: rem(75);
+    &__grid {
+      grid-template-columns: 100%;
+      gap: 0;
+      grid-template-areas:
+        "slider"
+        "thumbs"
+        "desc"
+        "mechanism"
+        "characteristics";
+    }
+
+    &__item {
+      &_thumbs {
+        padding: rem(8);
+        margin: 0 0 rem(17);
+        .swiper {
+          height: auto;
+        }
+
+        .swiper-slide {
+          height: auto;
+        }
+      }
+
+      &_slider {
+        margin: 0 0 rem(12);
+      }
+
+      &_desc {
+        padding-top: 0;
+        margin-bottom: rem(17);
+        justify-self: center;
+      }
+
+      &_mechanism {
+        max-width: 100%;
+        @include image-set("../img/d31_bg_mobile");
+        background-size: rem(296) rem(64);
+        background-position: bottom center;
+        padding-bottom: rem(96);
+        margin-bottom: rem(27);
+      }
+    }
+
+    &__lead {
+      font-size: rem(16);
+    }
+
+    &__desc {
+      max-width: rem(244);
+      margin: 0 0 rem(15);
+    }
+
+    &__price {
+      font-size: rem(24);
+      margin: 0 0 rem(16);
+    }
+
+    &__button {
+      padding: rem(15.5) rem(62);
+    }
+
+    &__add-basket {
+      padding: rem(13) rem(62);
+    }
+
+    .product-characteristics {
+      &__field {
+        display: block;
+
+        &:not(:last-child) {
+          padding-bottom: rem(4.5);
+        }
+      }
+
+      &__name {
+        display: block;
+        width: 100%;
+      }
+
+      &__value {
+        display: block;
+        width: 100%;
+        line-height: lh(13, 14);
+      }
+
+      &__text {
+        font-size: rem(10);
+        line-height: (13, 10);
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@include mouse-device {
+  .product-description__add-basket {
+    &:hover {
+      color: var(--color-primaryLight);
+    }
+
+    &:focus {
+      color: var(--color-primaryShade);
+    }
+  }
+}
+
+@include touch-device {
+  .product-description__add-basket {
+    &:active {
+      color: var(--color-primaryShade);
+    }
+  }
+}

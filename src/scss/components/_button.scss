@@ -1,0 +1,63 @@
+.button {
+  border: rem(2) solid transparent;
+  border-radius: rem(10);
+  font-weight: 700;
+  transition-property: background, border-color, color;
+  transition-duration: $transitionDuration;
+
+  &_background_primary {
+    background-color: var(--color-primary);
+  }
+
+  &_color_white {
+    color: white;
+  }
+
+  &_color_primary {
+    color: var(--color-primary);
+  }
+
+  &_border {
+    border-color: var(--color-primary);
+  }
+}
+
+@include mouse-device {
+  .button {
+    &_animation_one {
+      &:hover {
+        background-color: var(--color-primaryLight);
+      }
+
+      &:focus {
+        border-color: var(--color-primaryShade);
+      }
+    }
+
+    &_animation_two {
+      &:hover {
+        background-color: var(--color-primary);
+        color: white;
+      }
+
+      &:focus {
+        background-color: var(--color-primaryLight);
+        border-color: var(--color-primary);
+        color: white;
+      }
+    }
+  }
+}
+
+@include touch-device {
+  .button {
+    &_animation_one,
+    &_animation_two {
+      &:active {
+        background-color: var(--color-primaryShade);
+        border-color: var(--color-primaryShade);
+        color: white;
+      }
+    }
+  }
+}

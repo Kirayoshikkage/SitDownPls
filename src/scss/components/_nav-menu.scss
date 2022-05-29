@@ -1,0 +1,20 @@
+.nav-menu {
+  &__list_grid {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-auto-flow: row;
+    gap: rem(16) rem(81);
+  }
+
+  &__list_grid_row {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-auto-flow: row;
+    gap: rem(41) rem(64);
+  }
+
+  &__link {
+    line-height: lh(21, 16);
+    color: var(--color-black);
+  }
+}

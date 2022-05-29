@@ -1,0 +1,13 @@
+.subtitle {
+  font-size: rem(24);
+  font-weight: 400;
+  color: var(--color-black);
+
+  &_lh_31 {
+    line-height: lh(31, 24);
+  }
+
+  &_mgb_22 {
+    margin: 0 0 rem(22);
+  }
+}

@@ -1,0 +1,55 @@
+.path {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    position: relative;
+    color: var(--color-grey);
+
+    &:not(:last-child) {
+      padding-right: rem(14.5);
+
+      &::before {
+        content: "/";
+        position: absolute;
+        top: 0;
+        right: rem(3);
+        color: inherit;
+      }
+    }
+
+    &:last-child {
+      color: var(--color-primaryShade);
+    }
+  }
+
+  &__link {
+    outline: none;
+    font-size: rem(14);
+    color: inherit;
+    transition: color $transitionDuration;
+  }
+
+  &_mgb_32 {
+    margin-bottom: rem(32);
+  }
+}
+
+@include mouse-device {
+  .path__link {
+    &:hover,
+    &:focus {
+      color: var(--color-primary);
+    }
+  }
+}
+
+@include touch-device {
+  .path__link {
+    &:active {
+      color: var(--color-primary);
+    }
+  }
+}

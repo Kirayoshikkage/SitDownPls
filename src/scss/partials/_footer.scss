@@ -1,0 +1,131 @@
+.footer {
+  &__item {
+    &:first-child {
+      background-color: #eaeaea;
+      padding: rem(24) 0 rem(20);
+    }
+
+    &:last-child {
+      padding: rem(10) 0;
+    }
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: rem(32);
+    grid-template-areas:
+      "logo logo . . menu menu menu menu menu menu menu menu"
+      "socials socials . . menu menu menu menu menu menu menu menu";
+  }
+
+  &__logo {
+    grid-area: logo;
+  }
+
+  .footer__socials {
+    grid-area: socials;
+    transform: translateY(rem(-4));
+  }
+
+  .footer__footer-menu {
+    grid-area: menu;
+  }
+
+  &__copy {
+    font-size: rem(14);
+    line-height: lh(14, 19);
+    color: var(--color-grey);
+    text-align: center;
+    margin: 0;
+  }
+}
+
+@include laptop {
+  .footer {
+    .container {
+      grid-template-columns: repeat(9, 1fr);
+      grid-template-areas:
+        "logo logo menu menu menu menu menu menu menu"
+        "socials socials menu menu menu menu menu menu menu";
+    }
+  }
+
+  @include touch-device {
+    .footer {
+      .footer-menu__list_grid,
+      .footer-menu__item:first-child {
+        transform: none;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .footer {
+    &__item:first-child {
+      padding-bottom: rem(24);
+    }
+    .container {
+      gap: rem(24);
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-areas:
+        "logo logo . . socials socials"
+        "menu menu menu menu menu menu";
+    }
+
+    .footer__socials {
+      justify-self: flex-end;
+      transform: translateY(0);
+    }
+
+    .footer-menu {
+      &__link {
+        &_mgb_5 {
+          margin-bottom: rem(3);
+        }
+      }
+    }
+  }
+}
+
+@include small-tablet {
+  .footer {
+    .container {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "logo"
+        "socials"
+        "menu";
+      justify-items: center;
+      gap: rem(24);
+    }
+
+    .footer__socials {
+      justify-self: center;
+      transform: translateY(rem(-3));
+    }
+
+    .footer-menu {
+      &__list {
+        &_grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: rem(24) rem(8);
+          justify-items: flex-start;
+          transform: translate(0);
+        }
+      }
+
+      &__item {
+        &:first-child,
+        &_transform_x {
+          transform: translate(0);
+        }
+      }
+
+      &__link {
+        transform: translate(0);
+      }
+    }
+  }
+}

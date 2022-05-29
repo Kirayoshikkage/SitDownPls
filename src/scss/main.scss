@@ -1,0 +1,17 @@
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+@import "components";
+@import "pages";
+
+@import "./partials/header";
+@import "./partials/burger-menu";
+@import "./partials/hero";
+@import "./partials/special-offers";
+@import "./partials/rating";
+@import "./partials/oxford";
+@import "./partials/category";
+@import "./partials/useful";
+@import "./partials/feedback";
+@import "./partials/footer";

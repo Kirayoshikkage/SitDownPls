@@ -1,0 +1,45 @@
+.category-card {
+  background-color: var(--color-greyLight);
+  border-radius: rem(10);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    &_padding_30 {
+      padding: rem(30);
+    }
+
+    &_bg {
+      background-repeat: no-repeat;
+      background-position: left bottom;
+      flex-grow: 1;
+    }
+
+    &:last-child {
+      margin-top: auto;
+    }
+  }
+
+  &__categories {
+    margin-bottom: rem(12);
+    transform: translateY(rem(-3)) translateX(rem(-5));
+  }
+
+  &__subtitle {
+    margin: 0;
+  }
+
+  &__link {
+    display: none;
+  }
+
+  &__icon {
+    width: rem(22);
+    height: rem(22);
+    fill: transparent;
+    stroke: var(--color-primary);
+    stroke-width: 2;
+    transform: rotate(180deg);
+  }
+}

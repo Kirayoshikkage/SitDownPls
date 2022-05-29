@@ -1,0 +1,214 @@
+.select {
+  position: relative;
+  &_active {
+    .select__icon {
+      transform: translateY(rem(2)) rotate(180deg);
+    }
+  }
+
+  &__trigger {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__icon {
+    transform: translateY(rem(2));
+    width: rem(13);
+    height: rem(8);
+    fill: var(--color-primary);
+    transition: transform $transitionDuration;
+  }
+
+  &__more-btn {
+    padding: 0 0 rem(15) rem(30);
+    color: var(--color-primary);
+  }
+}
+
+.select-category,
+.select-region {
+  .select__current-item {
+    font-size: 1rem;
+    line-height: lh(19, 16);
+    color: var(--color-primary);
+  }
+}
+
+.select-region {
+  position: relative;
+  min-width: rem(78);
+  z-index: 101;
+
+  .select__current-item {
+    margin: 0 rem(1) 0 0;
+    transition: color $transitionDuration;
+  }
+
+  .select__trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 rem(2);
+    transition: background $transitionDuration;
+  }
+
+  .select__body {
+    position: absolute;
+    background-color: white;
+    border: rem(2) solid var(--color-greyLight);
+
+    transform: translateX(rem(-5));
+  }
+
+  .select__more-btn {
+    padding: 0;
+    margin: 0 rem(10) 0.5rem;
+    color: var(--color-primary);
+  }
+
+  .select__content {
+    margin: 1rem rem(10);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: rem(8);
+    justify-items: start;
+  }
+
+  .select__item {
+    font-size: rem(14);
+    line-height: lh(18, 14);
+    color: var(--color-black);
+
+    &_selected {
+      display: none;
+    }
+  }
+
+  .select__icon {
+    transition-property: fill, transform;
+    transition-duration: $transitionDuration;
+  }
+}
+
+.select-category {
+  z-index: 12;
+  min-width: rem(300);
+  margin-right: rem(116);
+  .select__trigger {
+    position: relative;
+    padding: rem(17) rem(32);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: rem(2) solid var(--color-greyLight);
+    border-radius: 0 rem(10) rem(10) 0;
+    z-index: 2;
+
+    transition-property: border-color, background;
+    transition-duration: $transitionDuration;
+  }
+
+  .select__body {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    border: rem(2) solid var(--color-greyLight);
+    border-top: 0;
+    border-radius: rem(10);
+    background-color: white;
+  }
+
+  .select__content {
+    margin: rem(22) rem(30);
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-auto-flow: row dense;
+    justify-items: start;
+    gap: rem(10) rem(30);
+  }
+
+  .select__item {
+    font-size: rem(16);
+    line-height: lh(21, 16);
+
+    &_selected {
+      color: var(--color-primary);
+    }
+  }
+
+  .select__more-btn {
+    margin: 0 auto;
+    padding: 0 0 rem(15);
+  }
+}
+
+.select-filters.select_active {
+  .select__trigger {
+    border-color: var(--color-primaryShade);
+  }
+}
+
+@include mouse-device {
+  .select-region {
+    .select__trigger {
+      &:hover {
+        .select__current-item {
+          color: var(--color-primaryLight);
+        }
+
+        .select__icon {
+          fill: var(--color-primaryLight);
+        }
+      }
+
+      &:focus {
+        background-color: var(--color-primaryLight);
+
+        .select__current-item {
+          color: var(--color-primaryShade);
+        }
+
+        .select__icon {
+          fill: var(--color-primaryShade);
+        }
+      }
+    }
+  }
+
+  .select-category {
+    .select__trigger {
+      &:hover {
+        border-color: var(--color-primary);
+      }
+
+      &:focus {
+        background-color: #f8efff;
+        border-color: var(--color-primary);
+      }
+    }
+  }
+}
+
+@include touch-device {
+  .select-region {
+    .select__trigger {
+      &:active {
+        .select__current-item {
+          color: var(--color-primaryShade);
+        }
+
+        .select__icon {
+          fill: var(--color-primaryShade);
+        }
+      }
+    }
+  }
+
+  .select-category {
+    .select__trigger {
+      &:active {
+        border-color: var(--color-primaryShade);
+      }
+    }
+  }
+}

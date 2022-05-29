@@ -1,0 +1,57 @@
+.socials {
+  &__list {
+    &_grid {
+      display: grid;
+      gap: rem(10) rem(20);
+      grid-template-columns: repeat(3, rem(30));
+    }
+  }
+
+  &__link {
+    display: block;
+    width: rem(30);
+    height: rem(30);
+    transition-property: background;
+    transition-duration: $transitionDuration;
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+    fill: var(--color-grey);
+    transition-property: fill;
+    transition-duration: $transitionDuration;
+  }
+}
+
+@include mouse-device {
+  .socials {
+    &__link {
+      &:hover {
+        .socials__icon {
+          fill: var(--color-primary);
+        }
+      }
+
+      &:focus {
+        background-color: var(--color-primaryLight);
+
+        .socials__icon {
+          fill: #eaeaea;
+        }
+      }
+    }
+  }
+}
+
+@include touch-device {
+  .socials {
+    &__link {
+      &:active {
+        .socials__icon {
+          fill: var(--color-primaryShade);
+        }
+      }
+    }
+  }
+}

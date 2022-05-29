@@ -1,0 +1,53 @@
+.useful {
+  margin-bottom: rem(70);
+
+  &__title {
+    margin: 0;
+  }
+
+  .swiper-slide {
+    height: auto;
+  }
+
+  &__item {
+    &_flex {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &_first {
+      margin-bottom: rem(26);
+    }
+  }
+}
+
+@include laptop {
+  .useful {
+    .useful-card__subtitle {
+      font-size: rem(16);
+      margin: 0 0 rem(32);
+    }
+
+    .useful-card__item:last-child {
+      height: calc(100% - rem(202));
+    }
+  }
+}
+
+@include small-tablet {
+  .useful__slide-buttons {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 674.98px) {
+  .useful {
+    .useful-card {
+      &__img {
+        width: 100%;
+        max-height: rem(202);
+      }
+    }
+  }
+}

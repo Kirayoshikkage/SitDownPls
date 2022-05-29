@@ -1,0 +1,12 @@
+.title {
+  font-size: rem(32);
+  line-height: 1;
+  color: var(--color-black);
+  font-weight: 400;
+}
+
+@include small-tablet {
+  .title {
+    font-size: rem(24);
+  }
+}

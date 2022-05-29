@@ -1,0 +1,23 @@
+.rating-star {
+  position: absolute;
+
+  padding-left: rem(21);
+  background: url("../img/star.svg") no-repeat left center;
+  background-size: rem(15.65) rem(15);
+
+  &__value {
+    font-size: rem(16);
+    line-height: lh(21, 16);
+    color: var(--color-secondary);
+  }
+}
+
+@mixin rating-star-mobile {
+  .rating-star {
+    padding-left: rem(19);
+    background-size: rem(13) rem(12);
+    &__value {
+      font-size: rem(12);
+    }
+  }
+}

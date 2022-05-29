@@ -1,0 +1,54 @@
+.phone-number {
+  display: flex;
+  align-items: center;
+  transition-property: background;
+  transition-duration: $transitionDuration;
+
+  &__icon {
+    width: rem(22);
+    height: rem(22);
+    fill: var(--color-secondary);
+    margin-right: rem(1);
+    transition-property: fill;
+    transition-duration: $transitionDuration;
+  }
+
+  &__text {
+    transition-property: color;
+    transition-duration: $transitionDuration;
+    font-size: rem(14);
+    color: var(--color-secondary);
+  }
+}
+
+@include mouse-device {
+  .phone-number {
+    &:hover {
+      .phone-number__icon {
+        fill: #ffbd59;
+      }
+
+      .phone-number__text {
+        color: #ffbd59;
+      }
+    }
+
+    &:focus {
+      background-color: #fff5d1;
+    }
+  }
+}
+
+@include touch-device {
+  .phone-number {
+    &:active {
+      .phone-number__icon {
+        fill: #bb370e;
+      }
+
+      .phone-number__text {
+        color: #bb370e;
+      }
+    }
+  }
+}

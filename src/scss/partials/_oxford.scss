@@ -1,0 +1,94 @@
+.oxford {
+  margin-bottom: rem(70);
+  &__title {
+    max-width: rem(508);
+    margin: 0 0 rem(49);
+    color: white;
+    font-size: rem(48);
+    font-weight: 400;
+    line-height: lh(58, 48);
+  }
+
+  &__span {
+    font-family: "PlayfairDisplay";
+    font-size: rem(60);
+    font-weight: 900;
+    line-height: lh(75, 60);
+    color: rgba(213, 185, 134, 1);
+  }
+
+  &__content {
+    @include image-set("../img/oxford_desctop");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: rem(150) 0;
+  }
+
+  &__button {
+    padding: rem(19) rem(30);
+    display: inline-block;
+
+    &_desctop-hidden {
+      display: none;
+    }
+  }
+}
+
+@include laptop {
+  .oxford {
+    &__content {
+      @include image-set("../img/oxford_laptop");
+    }
+  }
+}
+
+@include tablet {
+  .oxford {
+    .container {
+      max-width: rem(726);
+    }
+
+    &__content {
+      @include image-set("../img/oxford_tablet");
+    }
+  }
+}
+
+@include mobile {
+  .oxford {
+    .container {
+      max-width: 100%;
+    }
+
+    &__content {
+      @include image-set("../img/oxford_mobile");
+      margin-bottom: rem(31);
+      padding: rem(30) 0;
+      min-height: rem(210);
+    }
+
+    &__button {
+      width: 100%;
+      text-align: center;
+
+      &_mobile-hidden {
+        display: none;
+      }
+
+      &_mobile-visible {
+        display: block;
+      }
+    }
+
+    &__title {
+      max-width: rem(187);
+      font-size: rem(16);
+      margin: 0;
+
+      .lead__span {
+        font-size: rem(24);
+      }
+    }
+  }
+}

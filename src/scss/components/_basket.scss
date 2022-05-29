@@ -1,0 +1,58 @@
+.basket {
+  position: relative;
+  width: rem(49);
+  height: rem(34);
+  padding: rem(3) rem(4);
+
+  transition: background $transitionDuration;
+
+  &__counter {
+    transform: translateY(rem(4));
+    left: rem(4);
+    position: absolute;
+    width: rem(14);
+    height: rem(15);
+    display: inline-block;
+    border-radius: 100%;
+    background-color: var(--color-secondary);
+    font-weight: 700;
+    font-size: rem(10);
+    color: white;
+    padding-top: rem(2);
+  }
+
+  &__icon {
+    width: rem(30);
+    height: rem(28);
+    transform: translateX(rem(5));
+    fill: var(--color-primary);
+    transition: fill $transitionDuration;
+  }
+}
+
+@include mouse-device {
+  .basket {
+    &:hover {
+      .basket__icon {
+        fill: var(--color-primaryLight);
+      }
+    }
+    &:focus {
+      background-color: var(--color-primaryLight);
+
+      .basket__icon {
+        fill: white;
+      }
+    }
+  }
+}
+
+@include touch-device {
+  .basket {
+    &:active {
+      .basket__icon {
+        fill: var(--color-primaryShade);
+      }
+    }
+  }
+}

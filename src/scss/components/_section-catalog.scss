@@ -1,0 +1,113 @@
+.catalog {
+  height: 100%;
+  &__title {
+    margin: 0 0 rem(29);
+    font-size: rem(24);
+  }
+
+  .swiper {
+    height: calc(100% - rem(54)) !important;
+    padding-bottom: rem(64);
+  }
+
+  .swiper-slide {
+    height: calc((100% - rem(64)) / 3) !important;
+  }
+
+  .swiper-pagination-bullet {
+    width: rem(32);
+    height: rem(32);
+    border-radius: rem(10);
+    background-color: transparent;
+    border: rem(2) solid var(--color-primary);
+    opacity: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: rem(16);
+    margin: 0;
+
+    transition-property: color, background;
+    transition-duration: $transitionDuration;
+
+    &:not(:last-child) {
+      margin-right: rem(13);
+    }
+  }
+
+  .swiper-pagination-fraction,
+  .swiper-pagination-custom,
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 0 !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: var(--color-primaryShade);
+    border-color: var(--color-primaryShade);
+    color: white;
+  }
+}
+
+@include mouse-device {
+  .catalog {
+    .swiper-pagination-bullet {
+      &:hover {
+        background-color: var(--color-primary);
+        color: #fff;
+      }
+
+      &:focus {
+        background-color: var(--color-primaryLight);
+        color: #fff;
+      }
+    }
+  }
+}
+
+@include touch-device {
+  .catalog {
+    .swiper-pagination-bullet {
+      &:active {
+        background-color: var(--color-primaryShade);
+        color: #fff;
+      }
+    }
+  }
+}
+
+@include laptop {
+  .catalog {
+    &__title {
+      display: none;
+    }
+
+    .swiper {
+      height: 100% !important;
+      padding-bottom: rem(66);
+    }
+  }
+}
+
+@media (max-width: 675px) {
+  .catalog {
+    &__title {
+      display: none;
+    }
+
+    .swiper {
+      height: 100% !important;
+      padding-bottom: rem(64);
+    }
+
+    .swiper-slide {
+      height: calc((100% - rem(32)) / 3) !important;
+    }
+
+    @include specical-card-mobile;
+
+    @include rating-star-mobile;
+  }
+}

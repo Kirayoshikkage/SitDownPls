@@ -1,0 +1,31 @@
+.benefits {
+  &__subtitle {
+    margin: 0 0 rem(16);
+  }
+
+  &__list {
+    counter-reset: benefits;
+  }
+
+  &__text {
+    padding-top: rem(12);
+    color: var(--color-greyShade);
+    line-height: lh(29, 16);
+    margin: 0;
+  }
+
+  &__item {
+    position: relative;
+    &::before {
+      counter-increment: benefits;
+      content: "Возможность " counter(benefits) ":";
+      font-weight: 600;
+      line-height: lh(22, 16);
+      color: var(--color-secondary);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(12);
+    }
+  }
+}

@@ -1,0 +1,382 @@
+.modal {
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(51, 51, 51, 0.3);
+  z-index: 1000;
+
+  &_active {
+    .modal__content {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  &__content {
+    position: relative;
+    background-color: white;
+    transition-property: transform, opacity;
+    transition-duration: $transitionDuration;
+    opacity: 0;
+    transform: translateY(-100%);
+    border-radius: rem(10);
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__close {
+    top: rem(20);
+    right: rem(20);
+    width: rem(20);
+    height: rem(20);
+    position: absolute;
+    padding: rem(2);
+    z-index: 10;
+
+    transition: background $transitionDuration;
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+    fill: var(--color-grey);
+
+    transition: fill $transitionDuration;
+  }
+
+  &__text {
+    margin: 0;
+    color: var(--color-black);
+    font-size: rem(14);
+    line-height: lh(19, 14);
+  }
+}
+
+.modal-callback {
+  .modal__content {
+    max-width: rem(624);
+    min-height: rem(421);
+    padding: rem(267) rem(75) rem(118);
+    background-image: url(../img/feedback-modal-bg.svg);
+    background-repeat: no-repeat;
+    background-position: left rem(202) top rem(118);
+  }
+}
+
+.product-description__modal-ordering {
+  .modal__content {
+    min-width: rem(624);
+    min-height: rem(421);
+    padding: rem(30);
+  }
+
+  .modal__title {
+    margin: 0 0 rem(8);
+  }
+
+  .modal__text {
+    max-width: rem(374);
+    margin: 0 0 rem(30);
+  }
+
+  .user-form__checkbox {
+    .validate-error-message {
+      left: rem(0);
+      top: rem(-15);
+    }
+  }
+}
+
+.modal-slider {
+  .modal__content {
+    min-height: rem(684);
+    overflow: hidden;
+  }
+
+  &__slider {
+    padding: rem(50) 0;
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__img {
+    max-width: rem(1065);
+    height: rem(418);
+    object-fit: contain;
+  }
+
+  .modal__item_last {
+    padding: rem(20) rem(51);
+    background-color: var(--color-greyLight);
+  }
+
+  &__thumbs {
+    .swiper-slide {
+      width: auto;
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+    }
+  }
+
+  &__img-thumb {
+    height: rem(126);
+    max-width: rem(281);
+    object-fit: contain;
+  }
+
+  &__slide-buttons {
+    display: none;
+  }
+}
+
+@include laptop {
+  .modal-slider {
+    .modal__content {
+      min-height: rem(588);
+    }
+
+    &__img {
+      max-width: rem(821);
+      height: rem(322);
+    }
+
+    .modal__item_last {
+      padding: rem(20) rem(67);
+      position: relative;
+    }
+
+    &__img-thumb {
+      max-width: rem(275);
+
+      &:last-child {
+        max-width: rem(255);
+      }
+    }
+
+    &__slide-buttons {
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+
+      &_prev {
+        left: rem(16);
+      }
+
+      &_next {
+        right: rem(16);
+      }
+    }
+  }
+}
+
+@include tablet {
+  .modal-slider {
+    .modal__content {
+      min-height: rem(494);
+    }
+
+    &__img {
+      max-width: rem(583);
+      height: rem(228);
+    }
+
+    .modal__item_last {
+      padding: rem(20) rem(79);
+    }
+
+    &__img-thumb {
+      max-width: rem(253);
+
+      &:last-child {
+        max-width: rem(253);
+      }
+    }
+  }
+}
+
+@include small-tablet {
+  .modal-callback {
+    .modal__content {
+      max-width: rem(296);
+      min-height: rem(216);
+      padding: rem(124) rem(51) rem(60);
+      background-size: rem(73) rem(50);
+      background-position: center top rem(60);
+    }
+
+    .modal__title {
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+
+  .modal {
+    &__close {
+      top: rem(13);
+      right: rem(16);
+      width: rem(12);
+      height: rem(12);
+      padding: 0;
+    }
+  }
+
+  .product-description__modal-ordering {
+    .modal__content {
+      min-width: 100%;
+      min-height: rem(387);
+      padding: rem(30) rem(16);
+    }
+
+    .modal__title {
+      font-size: rem(24);
+    }
+
+    .modal__text {
+      margin: 0 0 rem(16);
+    }
+
+    .custom-checkbox__content {
+      font-size: rem(11);
+
+      &::before {
+        top: rem(1);
+      }
+    }
+
+    .validate-error-message {
+      font-size: rem(10);
+    }
+  }
+
+  .modal-slider {
+    .modal__body {
+      width: 100%;
+    }
+
+    .modal__content {
+      min-height: rem(286);
+    }
+
+    &__slider {
+      padding: rem(32) 0;
+    }
+
+    &__img {
+      max-width: rem(264);
+      height: rem(104);
+    }
+
+    .modal__item_last {
+      padding: rem(16) rem(62);
+    }
+
+    &__img-thumb {
+      max-width: rem(172);
+      height: rem(86);
+
+      &:nth-child(1) {
+        height: rem(76);
+      }
+
+      &:last-child {
+        max-width: rem(172);
+      }
+    }
+  }
+}
+
+@include mouse-device {
+  .modal {
+    &__close {
+      &:hover {
+        .modal__icon {
+          fill: var(--color-primary);
+        }
+      }
+
+      &:focus {
+        background-color: var(--color-primaryLight);
+
+        .modal__icon {
+          fill: var(--color-primaryShade);
+        }
+      }
+    }
+  }
+}
+
+@include touch-device {
+  .modal {
+    &__close {
+      &:active {
+        .modal__icon {
+          fill: var(--color-primaryShade);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1023.98px) and (orientation: landscape) {
+  .product-description__modal-ordering {
+    .modal__content {
+      min-height: rem(280);
+      padding: 1rem;
+    }
+  }
+  .product-description__user-form {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .user-form__label {
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+
+      flex: 1 1 calc(50% - 1rem);
+    }
+
+    .user-form__checkbox {
+      flex: 1 1 100%;
+    }
+  }
+}
+
+@media (max-width: 1023.98px) and (min-width: 768px) and (orientation: landscape) {
+  .modal-callback {
+    .modal__content {
+      min-height: rem(300);
+      padding: rem(200) rem(75) rem(50);
+      background-position: left rem(202) top rem(58);
+    }
+  }
+}
+
+@media (max-width: 1023.98px) and (min-width: 768px) and (orientation: landscape) {
+  .modal-slider {
+    .modal__content {
+      min-height: rem(400);
+    }
+
+    &__img {
+      height: rem(180);
+    }
+
+    &__img-thumb {
+      height: rem(75);
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.suppliers {
+  &__subtitle {
+    margin: 0 0 rem(15);
+  }
+
+  &__text {
+    color: var(--color-greyShade);
+    line-height: lh(29, 16);
+    margin: 0;
+  }
+}

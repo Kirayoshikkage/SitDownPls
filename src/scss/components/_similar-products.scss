@@ -1,0 +1,44 @@
+.similar-products {
+  margin-bottom: rem(70);
+
+  &__item {
+    &_first {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: rem(24);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: rem(24);
+    color: var(--color-black);
+    font-weight: 400;
+  }
+}
+
+@include small-tablet {
+  .similar-products {
+    .subtitle {
+      font-size: rem(16);
+      line-height: lh(21.1, 16);
+    }
+
+    &__item_first {
+      margin-bottom: rem(26);
+    }
+
+    &__slide-buttons {
+      justify-content: center;
+      margin-top: 1rem;
+    }
+  }
+}
+
+@media (max-width: 675px) {
+  .similar-products {
+    @include specical-card-mobile;
+    @include rating-star-mobile;
+  }
+}

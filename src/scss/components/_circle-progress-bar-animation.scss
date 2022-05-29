@@ -1,0 +1,25 @@
+.circle-progress-bar-animation {
+  &__circle {
+    position: relative;
+    width: rem(20);
+    height: rem(20);
+
+    svg {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+  }
+
+  &__progress-bg {
+    stroke: white;
+  }
+
+  &__progress {
+    stroke: var(--color-secondary);
+    transform: rotate(-90deg) translateX(rem(20));
+    transform-origin: center;
+  }
+}

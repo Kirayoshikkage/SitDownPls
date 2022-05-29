@@ -1,0 +1,28 @@
+.animation-menu-text {
+  transition-property: color, background;
+  transition-duration: $transitionDuration;
+  padding: 0 rem(5);
+}
+
+@include mouse-device {
+  .animation-menu-text {
+    transform: translateX(rem(-5));
+    &:hover {
+      color: var(--color-primary);
+    }
+
+    &:focus {
+      background-color: var(--color-primaryLight);
+      color: var(--color-black);
+    }
+  }
+}
+
+@include touch-device {
+  .animation-menu-text {
+    padding: 0;
+    &:active {
+      color: var(--color-primaryShade);
+    }
+  }
+}

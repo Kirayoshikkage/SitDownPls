@@ -1,0 +1,113 @@
+<section class="feedback">
+  <div class="container">
+    <div class="feedback__grid">
+      <div class="feedback__item">
+        <h2 class="title feedback__title">Мы всегда вам рады!</h2>
+        <p class="feedback__desc">
+          Безусловно, новая модель организационной деятельности в значительной
+          степени обусловливает важность распределения внутренних резервов и
+          ресурсов.
+          <button
+            data-test="tooltip"
+            type="button"
+            class="btn-reset tooltip feedback__tooltip"
+            data-content="Реплицированные с зарубежных источников, исследования формируют
+              глобальную сеть."
+          >
+            <svg
+              class="tooltip__icon"
+              viewBox="0 0 14 14"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="7" cy="7" r="6.5" class="tooltip__icon-circle" />
+              <path
+                class="tooltip__icon-question"
+                d="M5.95996 8.63184V8.27051C5.95996 8.04915 5.99089 7.85384 6.05273 7.68457C6.11458 7.51204 6.21387 7.34928 6.35059 7.19629C6.4873 7.04004 6.66797 6.88053 6.89258 6.71777C7.0944 6.57454 7.25553 6.44596 7.37598 6.33203C7.49967 6.2181 7.58919 6.10579 7.64453 5.99512C7.70312 5.88118 7.73242 5.7526 7.73242 5.60938C7.73242 5.39779 7.6543 5.23665 7.49805 5.12598C7.3418 5.0153 7.1237 4.95996 6.84375 4.95996C6.5638 4.95996 6.28548 5.00391 6.00879 5.0918C5.73535 5.17969 5.45703 5.29525 5.17383 5.43848L4.6416 4.36914C4.96712 4.18685 5.32031 4.04036 5.70117 3.92969C6.08203 3.81576 6.4987 3.75879 6.95117 3.75879C7.64779 3.75879 8.18652 3.92643 8.56738 4.26172C8.9515 4.59375 9.14355 5.01693 9.14355 5.53125C9.14355 5.80469 9.09961 6.04232 9.01172 6.24414C8.92708 6.44271 8.79688 6.62826 8.62109 6.80078C8.44857 6.97005 8.2321 7.14909 7.97168 7.33789C7.77637 7.48112 7.62663 7.60156 7.52246 7.69922C7.41829 7.79688 7.34668 7.89453 7.30762 7.99219C7.27181 8.08659 7.25391 8.20215 7.25391 8.33887V8.63184H5.95996ZM5.80371 10.3018C5.80371 9.99577 5.88672 9.78092 6.05273 9.65723C6.22201 9.53353 6.42546 9.47168 6.66309 9.47168C6.89421 9.47168 7.09277 9.53353 7.25879 9.65723C7.42806 9.78092 7.5127 9.99577 7.5127 10.3018C7.5127 10.5947 7.42806 10.8063 7.25879 10.9365C7.09277 11.0667 6.89421 11.1318 6.66309 11.1318C6.42546 11.1318 6.22201 11.0667 6.05273 10.9365C5.88672 10.8063 5.80371 10.5947 5.80371 10.3018Z"
+              />
+            </svg>
+          </button>
+        </p>
+        <form
+          data-test="form"
+          action="#"
+          class="user-form feedback__user-form user-form_flex_column"
+        >
+          <div class="visually-hidden">Форма обратной связи</div>
+          <label class="user-form__label user-form__label_mgb_30">
+            <input
+              data-test="name"
+              type="text"
+              class="input-reset user-form__input user-form__input_text"
+              placeholder="Как вас зовут?"
+              name="name"
+            />
+            <span class="validate-error-message"></span>
+          </label>
+          <label class="user-form__label user-form__label_mgb_30">
+            <input
+              data-test="tel"
+              type="tel"
+              class="input-reset user-form__input user-form__input_phone"
+              placeholder="Ваш телефон"
+              name="tel"
+            />
+            <span class="validate-error-message"></span>
+          </label>
+          <label class="user-form__label user-form__label_mgb_30">
+            <input
+              data-test="email"
+              type="text"
+              class="input-reset user-form__input user-form__input_email"
+              placeholder="Ваш e-mail"
+              name="email"
+            />
+            <span class="validate-error-message"></span>
+          </label>
+          <button
+            class="btn-reset user-form__button user-form__button_mgb_12 button button_background_primary button_animation_one button_color_white"
+            type="submit"
+          >
+            Отправить
+          </button>
+          <label
+            aria-label="Чекбокс для принятия пользовательского соглашения"
+            class="outline-reset user-form__checkbox custom-checkbox"
+            tabindex="0"
+          >
+            <input
+              name="agreement"
+              type="checkbox"
+              class="custom-checkbox__field"
+              data-test="checkbox"
+            />
+            <span class="custom-checkbox__content"
+              >Принимаю
+              <a class="outline-reset user-form__link" href="#">
+                пользовательское соглашение
+              </a></span
+            >
+            <span class="validate-error-message"></span>
+          </label>
+        </form>
+      </div>
+      <div class="feedback__item feedback__item_bg"></div>
+    </div>
+  </div>
+  <div
+    data-test="modal"
+    class="modal modal-callback feedback__modal fade-animation"
+  >
+    <div class="modal__body">
+      <div class="container">
+        <div class="modal__content">
+          <h2 class="title modal__title">Спасибо, мы вам перезвоним!</h2>
+          <button class="btn-reset modal__close">
+            <svg class="modal__icon">
+              <use xlink:href="img/sprite.svg#modal_close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

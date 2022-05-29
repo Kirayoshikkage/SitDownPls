@@ -1,0 +1,7 @@
+.animation-height {
+  transition-property: max-height, overflow, visibility;
+  transition-duration: $transitionDuration;
+  max-height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}

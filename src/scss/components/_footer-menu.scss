@@ -1,0 +1,31 @@
+.footer-menu {
+  &__list {
+    &_grid {
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      grid-auto-flow: row;
+      gap: rem(24);
+      justify-content: space-between;
+      transform: translateX(rem(10));
+    }
+  }
+
+  &__item {
+    &:first-child {
+      transform: translateX(rem(-10));
+    }
+
+    &_transform_x {
+      transform: translateX(rem(-20));
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    color: var(--color-black);
+
+    &_mgb_5 {
+      margin-bottom: rem(5);
+    }
+  }
+}

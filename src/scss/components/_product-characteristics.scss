@@ -1,0 +1,39 @@
+.product-characteristics {
+  $width: 328;
+  border-spacing: 0;
+  width: 100%;
+  &__name {
+    width: rem($width);
+  }
+
+  &__value,
+  &__text {
+    font-size: rem(14);
+    line-height: lh(23, 14);
+  }
+
+  &__value {
+    color: var(--color-black);
+  }
+
+  &__field {
+    vertical-align: text-top;
+  }
+
+  &__text {
+    display: inline-block;
+    position: relative;
+    color: var(--color-grey);
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: rem(6);
+      height: rem(1.15);
+      right: calc(100% - rem($width) + rem(4));
+      width: calc(rem($width) - 100% - rem(8));
+      background-image: url(../img/dotted.svg);
+      background-repeat: repeat-x;
+    }
+  }
+}

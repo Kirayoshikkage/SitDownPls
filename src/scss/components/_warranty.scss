@@ -1,0 +1,47 @@
+.warranty {
+  &__subtitle {
+    margin: 0 0 rem(15);
+  }
+
+  &__text {
+    margin: 0;
+    line-height: lh(29, 16);
+    color: var(--color-greyShade);
+  }
+
+  &__list {
+    counter-reset: warranty;
+    margin-bottom: rem(32);
+  }
+
+  &__item {
+    position: relative;
+    padding-left: rem(26);
+    &::before {
+      counter-increment: warranty;
+      content: counter(warranty) ".";
+      position: absolute;
+      top: rem(5);
+      left: 0;
+      font-weight: 600;
+      line-height: lh(22, 16);
+      color: var(--color-secondary);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(12);
+    }
+  }
+
+  &__term {
+    @include image-set("../img/warranty_bg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    max-width: rem(640);
+    font-size: rem(24);
+    line-height: lh(36, 24);
+    color: var(--color-black);
+    margin: 0;
+    padding: rem(22) 0 rem(22) rem(109);
+  }
+}

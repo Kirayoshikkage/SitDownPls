@@ -1,0 +1,43 @@
+.getting {
+  &__subtitle {
+    margin: 0 0 rem(15);
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: rem(12);
+  }
+
+  &__item {
+    padding-left: rem(37);
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: rem(25);
+      height: rem(25);
+    }
+
+    &_one::before {
+      background: url("../img/getting_one.svg") no-repeat;
+    }
+
+    &_two::before {
+      background: url("../img/getting_two.svg") no-repeat;
+    }
+
+    &_three::before {
+      background: url("../img/getting_three.svg") no-repeat;
+    }
+  }
+
+  &__text {
+    color: var(--color-greyShade);
+    margin: 0;
+    line-height: lh(24, 16);
+  }
+}
