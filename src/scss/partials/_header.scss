@@ -1,7 +1,5 @@
 .header {
   margin-bottom: rem(32);
-  position: relative;
-
   &__region {
     display: flex;
     align-items: center;
@@ -185,7 +183,14 @@
       display: flex;
     }
 
+    &__item_nth_2,
     &__item_nth_3 {
+      position: relative;
+      z-index: 102;
+    }
+
+    &__item_nth_3 {
+      z-index: 101;
       padding: rem(16) 0;
     }
 
@@ -216,6 +221,8 @@
       }
 
       &_first {
+        position: relative;
+        z-index: 103;
         padding: rem(11) 0 rem(9);
 
         .container {
