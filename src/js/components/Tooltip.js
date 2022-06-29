@@ -22,8 +22,6 @@ class Tooltip {
 
         this.hide(e);
       },
-    },
-    all: {
       focus: (e) => {
         this.show(e);
 
@@ -37,7 +35,7 @@ class Tooltip {
     },
   };
 
-  _listAvailableDevices = ["desctop", "mobile", "all"];
+  _listAvailableDevices = ["desctop", "mobile", "all", "test"];
 
   _currentDevice;
 
@@ -65,7 +63,7 @@ class Tooltip {
 
   getEventsOnDevice(device) {
     return this._listEvents[device]
-      ? Object.assign(this._listEvents["all"], this._listEvents[device])
+      ? Object.assign(this._listEvents["all"] ?? {}, this._listEvents[device])
       : this._listEvents["all"];
   }
 
@@ -316,7 +314,7 @@ class Tooltip {
   }
 
   getListAvailableDevices() {
-    return this._listAvailableDevices;
+    return this._listAvailableDevices.filter((item) => item !== "test");
   }
 
   addDevice(device, events) {
