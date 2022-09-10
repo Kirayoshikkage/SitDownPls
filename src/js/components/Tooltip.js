@@ -22,6 +22,8 @@ class Tooltip {
 
         this.hide(e);
       },
+    },
+    all: {
       focus: (e) => {
         this.show(e);
 
@@ -32,7 +34,7 @@ class Tooltip {
 
         this.getTooltip(e).dataset.focus = "false";
       },
-    },
+    }
   };
 
   _listAvailableDevices = ["desctop", "mobile", "all", "test"];
