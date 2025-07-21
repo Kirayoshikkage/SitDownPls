@@ -1,4 +1,4 @@
-# SitDownPls
+# SitDownPls http://sitdownpls.matvie1x.beget.tech/
 
 ## Установка проекта
 ```
